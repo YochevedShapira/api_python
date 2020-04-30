@@ -1,51 +1,31 @@
-# api_python
-The project has database that holds data about messages and in order that the "client side" 
-will be able to manage with the data (delete, insert ,select) this 'API' is written.
-The API  let the client:
+This project has a database that holds data about messages. 
+This 'API' was written in order to help the "client side" manage with  the data (delete, insert ,select).
+The API lets the client:
+ Add messages by sending a Json (and of course sending the matching url) 
+ Delete messages by mentioning their application Id/session Id or delete signal messages by mentioning the message Id .
+Get messages/message in the same way mentioned above.
 
-Add message by sending a Json (and of course sending the match url).
-
-Delete messages by mention their application id/session id or delete signal message by mention message id.
-
-Get messages/message as mentioned above(like delet).
-
-
- 
-The function in 'app' file get the client request and responsible to pass the data they got to the functions
-that manage with the database (in 'DB' file) and also return the client the matching data.
-For delete/get single message there is a different function from delete/get messages))
-(that file runs the project)
-
-
-The functions in 'DB' file has 2 parts:
-The first one executes queries straight on the database(functions that their name ends with 'db').
-The second one runs the first one and returns and back data abstractly.
-
-
-The 'Message' file has a class that defines the 'Message' object ,(I have created him for managing with the data easily)
-
-
-The 'test_api' file is a test plan for the 'api'
+The function in the 'app' file receives the clients request and is responsible to pass on the incoming data to the functions that manage the database (in the 'DB' file) and also return the the matching data to the client. 
+(for delete/get single message there is a different function from delete/get messages)
 
 
 
+The functions in the 'DB' file has 2 parts: 
+The first one executes queries straight on the database (functions that names end with 'DB') 
+The second one runs the first one and returns the data back abstractly.
 
-The database 'MessagesDB' is build this way:
+The 'Message' file has a class that defines the 'Message' object, (Created in order to managing the data easily)
+
+
+The 'test API' file is a test plan for the 'API'
+
+
+The database 'Messages DB' is built in the following way:
 
 
 TABLE "Messages":
+messageId" TEXT NOT NULL PRIMARY KEY, "applicationId" TEXT NOT NULL, "sessionId" TEXT NOT NULL, "content" TEXT,
 
- messageId" TEXT NOT NULL PRIMARY KEY,
- "applicationId" TEXT NOT NULL,
- "sessionId" TEXT NOT NULL,
- "content" TEXT,
- 
+
 TABLE "participants":
-
-
-
-  "participantId" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
-"messageId" TEXT NOT NULL,
-articipantName" TEXT,
- " FOREIGN KEY("messageId") REFERENCES "Messages" )
-
+"participantId" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "messageId" TEXT NOT NULL, articipantName" TEXT, " FOREIGN KEY("messageId") REFERENCES "Messages" )
