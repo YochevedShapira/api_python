@@ -2,9 +2,12 @@
 The project has database that holds data about messages and in order that the "client side" 
 will be able to manage with the data (delete, insert ,select) this 'API' is written.
 The API  let the client:
- Add message by sending a Json (and of course sending the match url)
-Delete messages by mention their application id/session id or delete signal message by mention message id
-Get messages/message as mentioned above
+
+Add message by sending a Json (and of course sending the match url).
+
+Delete messages by mention their application id/session id or delete signal message by mention message id.
+
+Get messages/message as mentioned above(like delet).
 
 
  
@@ -15,10 +18,12 @@ For delete/get single message there is a different function from delete/get mess
 
 
 The functions in 'DB' file has 2 parts:
-The first one executes queries straight on the database(functions that their name ends with 'db')
-The second one runs the first one and returns and back data abstractly
+The first one executes queries straight on the database(functions that their name ends with 'db').
+The second one runs the first one and returns and back data abstractly.
+
 
 The 'Message' file has a class that defines the 'Message' object ,(I have created him for managing with the data easily)
+
 
 The 'test_api' file is a test plan for the 'api'
 
@@ -36,6 +41,8 @@ TABLE "Messages":
  "content" TEXT,
  
 TABLE "participants":
+
+
 
   "participantId" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
 "messageId" TEXT NOT NULL,
