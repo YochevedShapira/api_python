@@ -17,10 +17,10 @@ The second one runs the first one and returns the data back abstractly.
 The 'Message' file has a class that defines the 'Message' object, (Created in order to managing the data easily)
 
 
-The 'test API' file is a test plan for the 'API'
+The 'test_api' file is a test plan for the 'API'
 
 
-The database 'Messages DB' is built in the following way:
+The database 'MessagesDB' is built in the following way:
 
 
 TABLE "Messages":
